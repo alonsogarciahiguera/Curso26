@@ -1,0 +1,44 @@
+/*
+ * Derivada_test.cpp
+ *
+ *  Created on: 30 sept 2026
+ *      Author: Alons
+ */
+
+
+#include "gtest/gtest.h"
+#include "Derivada.h"
+
+TEST(Derivada, construct){
+	Derivada D(6,33);
+	Derivada a(4);
+	Derivada c;
+
+	int va, vb;
+	D.get(va,vb);
+	ASSERT_EQ(va,6);
+	ASSERT_EQ(vb,33);
+}
+
+
+TEST(Derivada, poly){
+	Base d1(3);
+
+	ASSERT_EQ(d1.Suma(),3);
+
+	Derivada d2(3,4);
+	ASSERT_EQ(d2.Suma(),107);
+
+	Base *p;
+	p=&d2;
+	ASSERT_EQ(p->Suma(),107);
+
+	ASSERT_EQ(p->global(),1);
+	ASSERT_EQ(d1.global(),2);
+	ASSERT_EQ(d2.global(),3);
+
+
+
+
+
+}
